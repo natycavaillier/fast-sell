@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "fast-sell-67daa": {
+      "hosting": {
+        "fast-sell": [
+          "fast-sell-67daa"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "fast-sell-67daa"
+  }
+}

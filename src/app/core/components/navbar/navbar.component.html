@@ -1,0 +1,30 @@
+<mat-toolbar color="primary">
+        <button mat-icon-button>
+            <mat-icon>storepoint</mat-icon>
+        </button>
+        <span>Fast Sell</span>
+    <span class="spacer"></span>
+    <div class="link-area">
+        <a mat-button>
+            <mat-icon>search</mat-icon>
+            Buscar
+        </a>
+        <a mat-button>
+            <mat-icon>add</mat-icon>
+            Anunciar
+        </a>
+        <button (onmouseenter)="menu" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Perfil">
+            <mat-icon>account_circle</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item>
+                <mat-icon>storage</mat-icon>
+                <span>Meus Anúncios</span>
+            </button>
+            <button mat-menu-item>
+                <mat-icon>logout</mat-icon>
+                <span>Sair</span>
+            </button>
+        </mat-menu>
+    </div>
+</mat-toolbar>
