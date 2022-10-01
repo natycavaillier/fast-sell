@@ -1,19 +1,37 @@
-<p>login works!</p>
-<form [formGroup]="loginForm">
-    <div class="example-container">
-        <mat-form-field appearance="fill" floatLabel="always">
-            <mat-label>Digite o seu email</mat-label>
-            <input matInput placeholder="abc@example.com" formControlName="email" type="email" required>
-            <mat-error *ngIf="loginForm.get('email')?.errors?.['required']">O email é obrigatório</mat-error>
-        </mat-form-field>
+<div class="container">
+    <h1 class="title">Login</h1>
+    <div class="auth-container">
+        <div class="login-container">
+            <form [formGroup]="loginForm" class="login-form" (ngSubmit)="onSubmit()">
+                <mat-form-field appearance="fill" floatLabel="always">
+                    <mat-label>Email</mat-label>
+                    <input matInput placeholder="Digite o seu email" formControlName="email" type="email" required>
+                    <mat-icon matSuffix>person</mat-icon>
+                    <mat-error *ngIf="loginForm.get('email')?.errors?.['required']">O email é obrigatório</mat-error>
+                    <mat-error *ngIf="loginForm.get('email')?.errors?.['email']">O formato está incorreto</mat-error>
+                </mat-form-field>
 
-        <mat-form-field appearance="fill">
-            <mat-label>Enter your password</mat-label>
-            <input matInput [type]="hide ? 'password' : 'text'">
-            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
-                [attr.aria-pressed]="hide">
-                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-            </button>
-        </mat-form-field>
+                <mat-form-field appearance="fill" floatLabel="always">
+                    <mat-label>Senha</mat-label>
+                    <input matInput placeholder="Digite a sua senha" [type]="hide ? 'password' : 'text'"
+                        formControlName="password" type="password" required>
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                        [attr.aria-pressed]="hide">
+                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                    <mat-error *ngIf="loginForm.get('password')?.errors?.['required']">A senha é obrigatória</mat-error>
+                    <mat-error *ngIf="loginForm.get('password')?.errors?.['minlength']">Tamanho mínimo de 8 caracteres
+                    </mat-error>
+                </mat-form-field>
+
+                <button mat-raised-button color="primary" id="login-bt">Entrar</button>
+            </form>
+            <a href="" style="text-align: left; margin-top: 3px;">Esqueci a minha senha</a>
+        </div>
+        <div class="logon-container">
+            <button mat-raised-button>Criar uma conta</button>
+            <p style="margin: 10px auto;">ou</p>
+            <button mat-raised-button color="warn">Entrar com Google</button>
+        </div>
     </div>
-</form>
+</div>
