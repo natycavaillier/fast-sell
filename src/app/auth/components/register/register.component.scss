@@ -11,14 +11,9 @@
     justify-content: space-around;
 }
 
-.auth-container {
-    display: flex;
-    justify-content: space-between;
-}
-
-.login-container, .register-container {
+.login-container {
     width: 50%;
-    margin: auto 50px;
+    margin: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -48,7 +43,7 @@
         display: block;
     }
 
-    .login-container, .register-container {
+    .login-container, .logon-container {
         width: 80%;
     }
 

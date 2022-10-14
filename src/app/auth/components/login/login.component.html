@@ -1,5 +1,5 @@
 <div class="container">
-    <h1 class="title">Login</h1>
+    <h1 class="title">Entrar</h1>
     <div class="auth-container">
         <div class="login-container">
             <form [formGroup]="loginForm" class="login-form" (ngSubmit)="onSubmit()">
@@ -28,8 +28,8 @@
             </form>
             <a href="" style="text-align: left; margin-top: 3px;">Esqueci a minha senha</a>
         </div>
-        <div class="logon-container">
-            <button mat-raised-button>Criar uma conta</button>
+        <div class="register-container">
+            <button mat-raised-button routerLink="/auth/register">Criar uma conta</button>
             <p style="margin: 10px auto;">ou</p>
             <button mat-raised-button color="warn">Entrar com Google</button>
         </div>
